@@ -1,0 +1,21 @@
+body{
+    font-family: 'Ubuntu';
+}
+input{   
+    border:none;
+    background-color:cornsilk;
+    width: 100%;
+    text-align: center;
+}
+th{
+    text-align: center;
+}
+.blink_text{
+    animation:1s blinker linear infinite;  
+    border: none;
+    border-bottom:dashed;
+    border-color:black;  
+}
+@keyframes blinker {  
+4% { opacity: 0; }
+}
