@@ -4,11 +4,7 @@ import Userform from './component/insert'
 import Displays from './component/display'
 import Search from './component/search'
 import Delete from './component/delete'
-import  { useState } from 'react';
 import axios from "axios";
-//import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-//import { Button } from 'react-bootstrap';
-//import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component
  {
   getemployee=(e)=>

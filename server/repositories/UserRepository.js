@@ -1,6 +1,6 @@
 class UserRepository {
     getUserById(userId) {
-        //dbb query
+        //db query
         var mysql = require('mysql');
 let con = mysql.createConnection({
   host: 'localhost',
