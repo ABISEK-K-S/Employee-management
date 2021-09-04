@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
-import  { useState } from 'react';
-import { Button, Alert, Container, Row, Col,Table , Fade,ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { func } from 'prop-types';
+import { Button, Alert,Table } from 'reactstrap';
 import Items from './items';
 class Displays extends Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
-      isLoaded: false,  
-      users:[],
+      isLoaded: false,
+      users: [],
     };
-    
-  }  
+
+  }
   dis() {
-  //  alert('asdsa');
     let self = this;
-    fetch('http://localhost:3000/display/',{
+    fetch('http://localhost:3000/display/', {
       method: 'POST',
-    }).then(function(response) {
-        console.log((response));
-        return response.json();
+    }).then(function (response) {
+      console.log((response));
+      return response.json();
     }).then((success) => {
       console.log(JSON.stringify(success));
       self.setState(() => {
@@ -29,25 +26,25 @@ class Displays extends Component {
           console: JSON.stringify(success)
         };
       });
-    });       
+    });
   }
-  render()  {
+  render() {
     return (
       <div>
-        <br/>
-        <Alert style={{width:"50%"} }>Display</Alert>
-        <Button onClick={() => this.dis()}>Show all employees</Button><br/><br/>      
-            <div>
-               <Table >
-               <tbody >
-                  {this.state.users.map((item, key) => {      
-                    return  <Items key={key} item={item}/>
-                  })}
-               </tbody>
-              </Table>
-            </div> 
+        <br />
+        <Alert style={{ width: "50%" }}>Display</Alert>
+        <Button onClick={() => this.dis()}>Show all employees</Button><br /><br />
+        <div>
+          <Table >
+            <tbody >
+              {this.state.users.map((item, key) => {
+                return <Items key={key} item={item} />
+              })}
+            </tbody>
+          </Table>
+        </div>
       </div>
-     );
+    );
   }
 }
 export default Displays;
@@ -61,9 +58,6 @@ export default Displays;
 
 
 
-
-/*
-<p>{this.state.console}</p>*/
 
 
 
@@ -81,21 +75,21 @@ const Displays = () =>
     function sayHello() {
         fetch('http://localhost:3000/display', {
             method: 'get'
-           
-        })           
+
+        })
         .then(function(response) {
             //alert(response);
              console.log(response.data);
              return response.json();
           })
-        }  
-    
-  
+        }
+
+
     return (
-        
-   
+
+
             <Button color="success" onClick={sayHello}> show all employees</Button>
-  
+
     )
 }
 
